@@ -1,0 +1,84 @@
+\documentclass{article}[10pt]
+ 
+\usepackage{amssymb} 
+\usepackage{amsmath} 
+\newcommand{\norm}[1]{\left\|#1\right\|} 
+ 
+\begin{document}
+
+\begin{center}
+\section*{Simulation Models}
+\end{center}
+
+
+The Lagrangian is defined as
+
+$L(q,\dot{q}) \triangleq K(q,\dot{q}) - P(q)$
+
+\noindent
+where $q$ represents the generalized coordinates such as position and angles. 
+
+The Euler-Lagrange equations are formed by
+
+\begin{equation}
+\frac{d}{dt}\left(\frac{\partial L(q,\dot{q})}{\partial \dot{q}}\right) - \frac{\partial L(q)}{q} = \tau_a - B\dot{q}
+\end{equation}
+
+\noindent
+where $B$ is a matrix with positive elements and $\tau = (\tau_1,...,\tau_n)^\top$ are the generalized forces.
+
+
+\section*{\hfil Kinetic Energy of Mechanical Systems \hfil}
+
+Point mass
+\begin{equation}
+K = \frac{1}{2}m \norm{\mathbf{v}}^2
+\end{equation}
+
+\noindent
+where $\mathbf{v}$ is a vector containing the translational velocities. 
+
+Multiple point masses
+
+\begin{equation}
+K = \frac{1}{2} \sum^n_i m_i \norm{\mathbf{v_i}}^2
+\end{equation}
+
+\noindent
+where $n$ is the number of point masses and $i$ is the ith point mass. 
+
+Point masses spinning about a point.
+
+$$v_i = w \times p_i$$
+
+\begin{align}
+K &= \sum^N_{i=1}\frac{1}{2}m_i\mathbf{v}_i\top\mathbf{v}_i \\
+K &= \sum^N_{i=1}\frac{1}{2}m_i(\mathbf{w}\times\mathbf{p}_i)^\top (\mathbf{w}\times\mathbf{p}_i) \\
+K &\triangleq \mathbf{w}^\top J \mathbf{w}
+\end{align}
+
+where $J$ is the inertia matrix
+
+$$ J = \sum^N_{i=1} m_i((\mathbf{p}_i \top \mathbf{p}_i)I_3 - \mathbf{p}_i\mathbf{p}_i\top) $$
+
+
+\section*{\hfil Potential Energy \hfil}
+
+Gravity
+
+\begin{equation}
+P=mgy + P_0
+\end{equation}
+
+where $P_0$ is the potential energy when $y = 0$.
+
+Spring
+\begin{equation}
+P=\frac{1}{2}ky^2
+\end{equation}
+
+\noindent
+where $k$ is the spring constant.
+
+
+\end{document}
